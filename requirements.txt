@@ -1,0 +1,14 @@
+# Reference Linux x86_64 runtime versions (Python 3.10).
+# Install the PyTorch CUDA wheel as described in README.md before the remaining
+# dependencies. Jetson/Orin requires a platform-specific PyTorch build.
+
+torch==2.6.0
+transformers==5.15.0
+accelerate==1.6.0
+huggingface-hub==1.30.0
+tokenizers==0.22.2
+safetensors==0.8.0
+grpcio==1.80.0
+protobuf==6.33.6
+psutil==7.0.0
+sentencepiece==0.2.0

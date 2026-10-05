@@ -1,0 +1,42 @@
+[
+  {
+    "record_id": "warmup_short",
+    "dataset": "demo_short",
+    "source": "self_authored_demo",
+    "input_group": "short",
+    "phase": "warmup",
+    "prompt": "Explain why a computer stores frequently used information in a cache."
+  },
+  {
+    "record_id": "short_1",
+    "dataset": "demo_short",
+    "source": "self_authored_demo",
+    "input_group": "short",
+    "phase": "formal",
+    "prompt": "Explain how an edge device and a cloud server can cooperate to run a language model."
+  },
+  {
+    "record_id": "short_2",
+    "dataset": "demo_short",
+    "source": "self_authored_demo",
+    "input_group": "short",
+    "phase": "formal",
+    "prompt": "What is the difference between latency and throughput? Give a simple example."
+  },
+  {
+    "record_id": "warmup_long",
+    "dataset": "demo_long",
+    "source": "self_authored_demo",
+    "input_group": "long",
+    "phase": "warmup",
+    "prompt": "A small library maintains a catalogue on a local computer and keeps a backup on a remote server. Staff can search the local catalogue even when the network is unavailable, but new records must eventually be synchronized. The local computer has limited memory and stores only the most frequently requested records in its cache. The remote server holds the complete collection. During busy hours, many readers search for the same books, while newly added titles are rarely requested. Explain which operations could happen locally, which might need the remote server, and how the library should handle a temporary network outage."
+  },
+  {
+    "record_id": "long_1",
+    "dataset": "demo_long",
+    "source": "self_authored_demo",
+    "input_group": "long",
+    "phase": "formal",
+    "prompt": "Consider a fictional monitoring system with three buildings. Each building has a small computer that receives temperature and power measurements. A shared server stores historical measurements and answers questions about the whole site. The first building has a reliable network connection but a slow local computer. The second has a faster computer but occasionally loses its connection. The third produces more measurements than the other two and has limited storage. Operators want quick answers about the current conditions in an individual building, as well as daily reports comparing all three buildings. Some reports require a long history, whereas a local warning may only need the latest few measurements. There is no requirement to send every intermediate calculation to the shared server, but all buildings must eventually contribute to the historical record. Explain a reasonable division of work between the local computers and the shared server. Discuss the trade-offs among response time, network traffic, storage capacity, and recovery after a disconnection. State which additional measurements would help evaluate the proposed design."
+  }
+]

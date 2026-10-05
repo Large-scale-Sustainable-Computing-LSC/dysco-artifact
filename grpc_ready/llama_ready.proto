@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+message TensorData {
+  bytes tensor_bytes = 1;
+  repeated int32 shape = 2;
+  string dtype = 3;
+}
+
+message RuntimeConfig {
+  string model_id = 1;
+  int32 layer_split = 2;
+  string torch_dtype = 3;
+  int32 max_new_tokens = 4;
+  bool do_sample = 5;
+  float temperature = 6;
+  float top_p = 7;
+  int32 top_k = 8;
+}
+
+message InitRequest {
+  RuntimeConfig config = 1;
+}
+
+message InitResponse {
+  int32 status = 1;
+  string message = 2;
+}
+
+message PrefillRequest {
+  TensorData hidden = 1;
+  TensorData attention_mask = 2;
+  TensorData position_ids = 3;
+}
+
+message PrefillResponse {
+  TensorData next_token = 1;
+  double server_infer_s = 2;
+  double server_total_s = 3;
+}
+
+message DecodeRequest {
+  TensorData hidden = 1;
+}
+
+message DecodeResponse {
+  TensorData next_token = 1;
+  double server_infer_s = 2;
+  double server_total_s = 3;
+}
+
+service ShardService {
+  rpc InitConnection(InitRequest) returns (InitResponse);
+  rpc PrefillStep(PrefillRequest) returns (PrefillResponse);
+  rpc DecodeStep(DecodeRequest) returns (DecodeResponse);
+}
