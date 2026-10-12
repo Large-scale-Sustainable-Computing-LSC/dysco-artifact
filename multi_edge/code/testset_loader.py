@@ -1,4 +1,8 @@
-"""Loads raw-text rows from workshop/selected_testsets for grpc_multi benches."""
+"""Loads prompts from selected_testsets/<group>/raw_inputs.jsonl.
+
+Those files are not distributed here; data/build_prompts.py rebuilds them
+from the manifests in data/.
+"""
 
 from __future__ import annotations
 
