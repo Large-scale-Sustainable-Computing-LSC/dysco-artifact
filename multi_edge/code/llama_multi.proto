@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+// Multi-edge, heterogeneous-cut-point variant of the edge-cloud shard service.
+// Every RPC after InitConnection carries a session_id so the cloud process
+// can serve several concurrently connected edge devices, each cut at its own
+// layer, against a single loaded copy of the full model.
+
+message TensorData {
+  bytes tensor_bytes = 1;
+  repeated int32 shape = 2;
+  string dtype = 3;
+}
+
+// Decoding is greedy everywhere, so no sampling settings are carried.
+message RuntimeConfig {
+  string model_id = 1;
+  int32 layer_split = 2;      // this session's cut point (heterogeneous across sessions)
+  string torch_dtype = 3;
+}
+
+message InitRequest {
+  string session_id = 1;
+  RuntimeConfig config = 2;
+}
+
+message InitResponse {
+  int32 status = 1;
+  string message = 2;
+}
+
+message PrefillRequest {
+  string session_id = 1;
+  TensorData hidden = 2;
+  TensorData attention_mask = 3;
+  TensorData position_ids = 4;
+}
+
+message PrefillResponse {
+  TensorData next_token = 1;
+  double server_infer_s = 2;   // time actually running the GPU forward pass
+  double server_wait_s = 3;    // time queued behind other sessions for the GPU
+  double server_total_s = 4;   // server_wait_s + server_infer_s + (de)serialization
+}
+
+message DecodeRequest {
+  string session_id = 1;
+  TensorData hidden = 2;
+}
+
+message DecodeResponse {
+  TensorData next_token = 1;
+  double server_infer_s = 2;
+  double server_wait_s = 3;
+  double server_total_s = 4;
+}
+
+message CloseRequest {
+  string session_id = 1;
+}
+
+message CloseResponse {
+  int32 status = 1;
+}
+
+message MemoryStatsRequest {}
+
+message MemoryStatsResponse {
+  int64 weight_bytes = 1;       // memory_allocated() right after the model was loaded, before any session
+  int64 allocated_bytes = 2;    // torch.cuda.memory_allocated() right now
+  int64 reserved_bytes = 3;     // torch.cuda.memory_reserved() right now (allocator's cached pool)
+  int64 cache_bytes_exact = 4;  // sum of actual KV-cache tensor bytes across all currently live sessions
+  int32 active_sessions = 5;
+}
+
+service ShardService {
+  rpc InitConnection(InitRequest) returns (InitResponse);
+  rpc PrefillStep(PrefillRequest) returns (PrefillResponse);
+  rpc DecodeStep(DecodeRequest) returns (DecodeResponse);
+  rpc CloseSession(CloseRequest) returns (CloseResponse);
+  rpc GetMemoryStats(MemoryStatsRequest) returns (MemoryStatsResponse);
+}

@@ -1,0 +1,34 @@
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.8.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+server pid=82, waiting for port 5090 ...
+
+baseline weights + CUDA context: 6.426 GB (model: meta-llama/Llama-3.2-3B, cut layers: [2, 2, 2, 2, 2, 2, 2, 2], bf16, batch_window_ms=8.0, edge=cuda:1/bfloat16)
+
+=== A. KV-cache memory vs number of concurrent edges (128 new tokens each) ===
+  N  peak_alloc_GB  peak_reserved_GB  peak_cache_MB  cache_%_of_weights
+  2          6.498             6.591          45.93               0.71%
+  4          6.569             6.826          92.01               1.43%
+  6          6.799             6.973         132.91               2.07%
+  8          6.783             7.130         178.06               2.77%
+
+=== B. KV-cache memory vs generation length (4 concurrent edges) ===
+max_new_tokens  peak_alloc_GB  peak_reserved_GB  peak_cache_MB  cache_%_of_weights
+            16          6.590             7.130          43.71               0.68%
+            64          6.577             7.130          63.90               0.99%
+           128          6.607             7.130          91.90               1.43%
+           256          6.655             7.130         146.54               2.28%
+
+after everything closed: active_sessions=0, cache_bytes_exact=0 (should be back to 0)

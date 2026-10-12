@@ -1,0 +1,12 @@
+# The repository-root .gitignore excludes results*/, *.csv, *.pdf and *.log as
+# runtime output. In this directory those patterns would drop the published
+# measurement data, so they are re-included here. Generated and downloaded
+# files stay ignored.
+!results/
+!results/**
+!*.csv
+!*.pdf
+
+selected_testsets/
+scale_stats_server.log
+stats_edge*.json

@@ -1,0 +1,966 @@
+Loading meta-llama/Llama-3.2-3B once, in full, on cuda:0 (torch.bfloat16) ...
+Loading weights:   0%|          | 0/254 [00:00<?, ?it/s]Loading weights: 100%|██████████| 254/254 [00:00<00:00, 18557.25it/s]
+Ready. 28 layers total; any session may cut anywhere in [1, 27].
+Baseline (weights + CUDA context): 6.426 GB
+Decode batching enabled [progressive (single-checkpoint)]: window=8.0ms, max_batch_size=8
+shard02_multi listening on [::]:5087
+[edge0_prof_r0] init: cut_layer=2
+[edge1_prof_r0] init: cut_layer=3
+[edge4_prof_r0] init: cut_layer=6
+[edge2_prof_r0] init: cut_layer=4
+[edge5_prof_r0] init: cut_layer=7
+[edge3_prof_r0] init: cut_layer=5
+[edge6_prof_r0] init: cut_layer=8
+[edge7_prof_r0] init: cut_layer=9
+progressive batch: size=7 cut_layers=[2, 3, 4, 5, 6, 7, 8]
+progressive batch: size=8 cut_layers=[2, 3, 4, 5, 6, 7, 8, 9]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+
+==== decode-step profile (after 50 progressive-sc steps) ====
+                 phase   ms_total    calls   us/call   %step
+mean sessions merged per progressive-sc step: 4.02
+  fastpath miss cause      membership_SUBSET: 1
+            step_total     1444.2       50   28885.0  100.0%
+        forward_launch      425.5       48    8863.9   29.5%
+  dissolve_range_group      323.8       47    6889.6   22.4%
+     merge_caches_SLOW      202.8       48    4224.4   14.0%
+         sampling_loop        1.8       50      36.7    0.1%
+         orchestration        0.4      100       4.2    0.0%
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+
+==== decode-step profile (after 100 progressive-sc steps) ====
+                 phase   ms_total    calls   us/call   %step
+mean sessions merged per progressive-sc step: 4.01
+  fastpath miss cause      membership_SUBSET: 1
+            step_total     2668.9      100   26689.3  100.0%
+        forward_launch      797.6       98    8139.0   29.9%
+  dissolve_range_group      678.5       97    6994.4   25.4%
+     merge_caches_SLOW      402.9       98    4111.4   15.1%
+         sampling_loop        3.5      100      34.7    0.1%
+         orchestration        0.7      200       3.7    0.0%
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+
+==== decode-step profile (after 150 progressive-sc steps) ====
+                 phase   ms_total    calls   us/call   %step
+mean sessions merged per progressive-sc step: 4.01
+  fastpath miss cause      membership_SUBSET: 1
+            step_total     3888.6      150   25924.2  100.0%
+        forward_launch     1164.4      148    7867.4   29.9%
+  dissolve_range_group     1039.8      147    7073.2   26.7%
+     merge_caches_SLOW      606.0      148    4094.5   15.6%
+         sampling_loop        5.2      150      34.3    0.1%
+         orchestration        1.1      300       3.5    0.0%
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+
+==== decode-step profile (after 200 progressive-sc steps) ====
+                 phase   ms_total    calls   us/call   %step
+mean sessions merged per progressive-sc step: 4.00
+  fastpath miss cause      membership_SUBSET: 1
+            step_total     5091.1      200   25455.3  100.0%
+        forward_launch     1534.8      198    7751.5   30.1%
+  dissolve_range_group     1381.9      197    7014.6   27.1%
+     merge_caches_SLOW      806.8      198    4074.5   15.8%
+         sampling_loop        6.8      200      34.1    0.1%
+         orchestration        1.4      400       3.4    0.0%
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+
+==== decode-step profile (after 250 progressive-sc steps) ====
+                 phase   ms_total    calls   us/call   %step
+mean sessions merged per progressive-sc step: 4.00
+  fastpath miss cause      membership_SUBSET: 1
+            step_total     6296.5      250   25185.9  100.0%
+        forward_launch     1903.1      248    7673.8   30.2%
+  dissolve_range_group     1732.8      247    7015.3   27.5%
+     merge_caches_SLOW     1004.9      248    4052.2   16.0%
+         sampling_loop        8.5      250      34.0    0.1%
+         orchestration        1.6      500       3.3    0.0%
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=5 cut_layers=[2, 4, 5, 7, 8]
+progressive batch: size=3 cut_layers=[3, 6, 9]
+progressive batch: size=4 cut_layers=[4, 5, 7, 8]
+[edge0_prof_r1] init: cut_layer=2
+[edge2_prof_r1] init: cut_layer=4
+[edge3_prof_r1] init: cut_layer=5
+[edge1_prof_r1] init: cut_layer=3
+[edge6_prof_r1] init: cut_layer=8
+[edge4_prof_r1] init: cut_layer=6
+[edge5_prof_r1] init: cut_layer=7
+[edge7_prof_r1] init: cut_layer=9
+progressive batch: size=5 cut_layers=[2, 3, 5, 6, 8]
+progressive batch: size=2 cut_layers=[4, 7]
+progressive batch: size=7 cut_layers=[2, 3, 5, 6, 7, 8, 9]
+progressive batch: size=8 cut_layers=[2, 3, 4, 5, 6, 7, 8, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+
+==== decode-step profile (after 300 progressive-sc steps) ====
+                 phase   ms_total    calls   us/call   %step
+mean sessions merged per progressive-sc step: 3.99
+  fastpath miss cause      membership_SUBSET: 1
+            step_total     7958.8      300   26529.4  100.0%
+        forward_launch     2330.1      295    7898.6   29.3%
+  dissolve_range_group     2031.0      294    6908.2   25.5%
+     merge_caches_SLOW     1201.2      295    4071.9   15.1%
+         sampling_loop       10.5      300      35.0    0.1%
+         orchestration        2.1      600       3.4    0.0%
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+
+==== decode-step profile (after 350 progressive-sc steps) ====
+                 phase   ms_total    calls   us/call   %step
+mean sessions merged per progressive-sc step: 3.99
+  fastpath miss cause      membership_SUBSET: 1
+            step_total     9270.2      350   26486.2  100.0%
+        forward_launch     2737.8      345    7935.7   29.5%
+  dissolve_range_group     2400.9      344    6979.4   25.9%
+     merge_caches_SLOW     1405.7      345    4074.3   15.2%
+         sampling_loop       12.3      350      35.1    0.1%
+         orchestration        2.4      700       3.5    0.0%
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+
+==== decode-step profile (after 400 progressive-sc steps) ====
+                 phase   ms_total    calls   us/call   %step
+mean sessions merged per progressive-sc step: 4.00
+  fastpath miss cause      membership_SUBSET: 1
+            step_total    10476.7      400   26191.7  100.0%
+        forward_launch     3097.8      395    7842.5   29.6%
+  dissolve_range_group     2760.1      394    7005.3   26.3%
+     merge_caches_SLOW     1604.8      395    4062.8   15.3%
+         sampling_loop       14.0      400      34.9    0.1%
+         orchestration        2.7      800       3.4    0.0%
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=5 cut_layers=[2, 5, 6, 7, 8]
+progressive batch: size=3 cut_layers=[3, 4, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+
+==== decode-step profile (after 450 progressive-sc steps) ====
+                 phase   ms_total    calls   us/call   %step
+mean sessions merged per progressive-sc step: 3.99
+  fastpath miss cause      membership_SUBSET: 1
+            step_total    11698.1      450   25995.7  100.0%
+        forward_launch     3463.7      445    7783.7   29.6%
+  dissolve_range_group     3123.9      444    7035.7   26.7%
+     merge_caches_SLOW     1806.2      445    4058.8   15.4%
+         sampling_loop       15.6      450      34.7    0.1%
+         orchestration        3.1      900       3.4    0.0%
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+
+==== decode-step profile (after 500 progressive-sc steps) ====
+                 phase   ms_total    calls   us/call   %step
+mean sessions merged per progressive-sc step: 3.99
+  fastpath miss cause      membership_SUBSET: 1
+            step_total    12917.6      500   25835.1  100.0%
+        forward_launch     3829.3      495    7736.0   29.6%
+  dissolve_range_group     3487.5      494    7059.7   27.0%
+     merge_caches_SLOW     2003.1      495    4046.7   15.5%
+         sampling_loop       17.3      500      34.5    0.1%
+         orchestration        3.4     1000       3.4    0.0%
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=4 cut_layers=[2, 5, 6, 8]
+progressive batch: size=4 cut_layers=[3, 4, 7, 9]
+progressive batch: size=3 cut_layers=[5, 6, 8]
+progressive batch: size=3 cut_layers=[3, 7, 9]
+[edge0_prof_r2] init: cut_layer=2
+[edge1_prof_r2] init: cut_layer=3
+[edge2_prof_r2] init: cut_layer=4
+[edge6_prof_r2] init: cut_layer=8
+[edge3_prof_r2] init: cut_layer=5
+[edge4_prof_r2] init: cut_layer=6[edge7_prof_r2] init: cut_layer=9
+
+[edge5_prof_r2] init: cut_layer=7
+progressive batch: size=2 cut_layers=[2, 3]
+progressive batch: size=2 cut_layers=[4, 5]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=2 cut_layers=[4, 5]
+progressive batch: size=6 cut_layers=[2, 3, 6, 7, 8, 9]
+progressive batch: size=2 cut_layers=[4, 5]
+progressive batch: size=2 cut_layers=[2, 8]
+progressive batch: size=6 cut_layers=[3, 4, 5, 6, 7, 9]
+progressive batch: size=2 cut_layers=[2, 8]
+progressive batch: size=6 cut_layers=[3, 4, 5, 6, 7, 9]
+progressive batch: size=2 cut_layers=[2, 8]
+progressive batch: size=6 cut_layers=[3, 4, 5, 6, 7, 9]
+progressive batch: size=2 cut_layers=[2, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+
+==== decode-step profile (after 550 progressive-sc steps) ====
+                 phase   ms_total    calls   us/call   %step
+mean sessions merged per progressive-sc step: 3.96
+  fastpath miss cause      membership_SUBSET: 1
+            step_total    14389.4      550   26162.6  100.0%
+        forward_launch     4209.9      542    7767.3   29.3%
+  dissolve_range_group     3884.6      541    7180.3   27.0%
+     merge_caches_SLOW     2177.1      542    4016.8   15.1%
+         sampling_loop       19.0      550      34.6    0.1%
+         orchestration        3.7     1100       3.4    0.0%
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+
+==== decode-step profile (after 600 progressive-sc steps) ====
+                 phase   ms_total    calls   us/call   %step
+mean sessions merged per progressive-sc step: 3.96
+  fastpath miss cause      membership_SUBSET: 1
+            step_total    15580.8      600   25968.1  100.0%
+        forward_launch     4581.2      592    7738.5   29.4%
+  dissolve_range_group     4221.6      591    7143.1   27.1%
+     merge_caches_SLOW     2378.4      592    4017.6   15.3%
+         sampling_loop       20.8      600      34.6    0.1%
+         orchestration        4.0     1200       3.3    0.0%
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+
+==== decode-step profile (after 650 progressive-sc steps) ====
+                 phase   ms_total    calls   us/call   %step
+mean sessions merged per progressive-sc step: 3.97
+  fastpath miss cause      membership_SUBSET: 1
+            step_total    16816.7      650   25871.8  100.0%
+        forward_launch     4960.5      642    7726.6   29.5%
+  dissolve_range_group     4580.5      641    7145.9   27.2%
+     merge_caches_SLOW     2577.3      642    4014.5   15.3%
+         sampling_loop       22.5      650      34.6    0.1%
+         orchestration        4.3     1300       3.3    0.0%
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+
+==== decode-step profile (after 700 progressive-sc steps) ====
+                 phase   ms_total    calls   us/call   %step
+mean sessions merged per progressive-sc step: 3.97
+  fastpath miss cause      membership_SUBSET: 1
+            step_total    18009.8      700   25728.3  100.0%
+        forward_launch     5328.2      692    7699.7   29.6%
+  dissolve_range_group     4921.3      691    7121.9   27.3%
+     merge_caches_SLOW     2777.8      692    4014.1   15.4%
+         sampling_loop       24.1      700      34.5    0.1%
+         orchestration        4.6     1400       3.3    0.0%
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+
+==== decode-step profile (after 750 progressive-sc steps) ====
+                 phase   ms_total    calls   us/call   %step
+mean sessions merged per progressive-sc step: 3.97
+  fastpath miss cause      membership_SUBSET: 1
+            step_total    19202.2      750   25602.9  100.0%
+        forward_launch     5700.4      742    7682.5   29.7%
+  dissolve_range_group     5254.2      741    7090.6   27.4%
+     merge_caches_SLOW     2976.9      742    4012.0   15.5%
+         sampling_loop       25.8      750      34.3    0.1%
+         orchestration        4.9     1500       3.3    0.0%
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=5 cut_layers=[2, 3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=4 cut_layers=[3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=4 cut_layers=[3, 6, 7, 8]
+progressive batch: size=3 cut_layers=[4, 5, 9]
+progressive batch: size=4 cut_layers=[3, 6, 7, 8]
+progressive batch: size=2 cut_layers=[6, 7]
+
+==== decode-step profile (signal 15) ====
+                 phase   ms_total    calls   us/call   %step
+mean sessions merged per progressive-sc step: 3.96
+  fastpath miss cause      membership_SUBSET: 1
+            step_total    19619.5      770   25479.8  100.0%
+        forward_launch     5838.8      760    7682.6   29.8%
+  dissolve_range_group     5366.2      760    7060.8   27.4%
+     merge_caches_SLOW     3043.5      760    4004.6   15.5%
+         sampling_loop       26.4      770      34.2    0.1%
+         orchestration        5.0     1540       3.3    0.0%

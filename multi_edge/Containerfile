@@ -1,0 +1,41 @@
+# Container image used for every multi-edge measurement in the paper.
+# Built and run with Podman; the CUDA 12.8 runtime matches the torch build
+# pinned below.
+#
+#   podman build -t edge-cloud-dsb:latest -f Containerfile .
+#   podman run --rm --device nvidia.com/gpu=all \
+#     -v "$HOME/.cache/huggingface":/root/.cache/huggingface \
+#     -v "$PWD/code":/app/code -w /app/code \
+#     edge-cloud-dsb:latest python3.12 shard02_multi.py --help
+FROM docker.io/nvidia/cuda:12.8.0-runtime-ubuntu24.04
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    PYTHONUNBUFFERED=1 \
+    HF_HUB_OFFLINE=0
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        python3.12 python3.12-venv python3-pip git \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+RUN python3.12 -m pip install --no-cache-dir --break-system-packages \
+        --index-url https://download.pytorch.org/whl/cu128 \
+        torch==2.9.0 \
+    && python3.12 -m pip install --no-cache-dir --break-system-packages \
+        transformers==5.16.1 \
+        grpcio==1.83.0 \
+        grpcio-tools==1.83.0 \
+        accelerate \
+        tokenizers \
+        safetensors \
+        huggingface_hub \
+        numpy
+
+COPY code/ /app/code/
+
+WORKDIR /app/code
+
+# No ENTRYPOINT: the image runs either the cloud server (shard02_multi.py),
+# an edge client (shard01_multi.py), or any benchmark script, chosen at run
+# time. runs/chain_podman_128.sh reproduces the full measurement sequence.
