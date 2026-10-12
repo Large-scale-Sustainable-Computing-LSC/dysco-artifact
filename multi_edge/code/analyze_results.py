@@ -1,4 +1,4 @@
-"""Every reported value, recomputed from the raw result files.
+"""
 
     python3 analyze_results.py pod128
 

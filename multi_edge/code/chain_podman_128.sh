@@ -1,13 +1,4 @@
 #!/bin/bash
-# Reruns every reported experiment at 128 generated tokens per session (was 16),
-# inside Podman. 128 is the shortest output length the standard serving
-# benchmarks use; at 16 a session's decode phase lasted ~0.23 s, so fleet
-# membership turned over constantly and prefill was a large share of every
-# timed window.
-#
-# Every output carries a _pod128 suffix. The original run also included a
-# batch-window-width sweep and a cache-persistence comparison; neither is
-# reported, so both are omitted here.
 set -u
 HERE=$(dirname "$(readlink -f "$0")"); cd "$HERE"
 RUN="podman run --rm --device nvidia.com/gpu=all \
