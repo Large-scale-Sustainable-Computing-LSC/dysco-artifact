@@ -13,11 +13,13 @@ Included in this repository:
 - Qwen prefix-shard export for memory-constrained edge devices;
 - Qwen hidden-state dump and suffix replay with optional delay injection;
 - single-device full-model baselines for Qwen and Llama;
-- small self-authored inputs and input-preparation utilities.
+- small self-authored inputs and input-preparation utilities;
+- multi-edge serving with heterogeneous cut layers and depth-synchronized
+  batching, with the measurement data behind the reported numbers.
 
-The multi-edge / depth-synchronized batching (DSB) implementation is not included
-in this repository. The `multi_edge/` directory is kept as a placeholder
-and documents this limitation.
+The multi-edge / depth-synchronized batching (DSB) implementation is in
+`multi_edge/`, which is self-contained and carries its own README, environment
+and measurement data.
 
 ## Repository Layout
 
@@ -47,7 +49,13 @@ and documents this limitation.
 |-- tests/
 |   `-- test_inputs.py
 `-- multi_edge/
-    `-- README.md
+    |-- README.md
+    |-- Containerfile
+    |-- reproduce.sh
+    |-- code/
+    |-- data/
+    |-- figures/
+    `-- results/
 ```
 
 Despite the `qwen_9b` directory name, the edge/cloud entry points and the
