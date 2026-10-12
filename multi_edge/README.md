@@ -41,20 +41,6 @@ DSB is `_run_decode_group_progressive_single_checkpoint` in
 | Round-robin interleaving | `--batch-window-ms 0 --interleave-group-size N` |
 | DSB | `--batch-window-ms 8 --progressive-batching` |
 
-## Where each result comes from
-
-| Paper item | Result file in `results/` | Produced by `code/` |
-| --- | --- | --- |
-| Table III, Poisson arrivals | `stats_poisson_hetero_pod128.json` | `poisson_bench.py` |
-| Table IV, both models | `stats_tail_depth_sweep_pod128.json`, `stats_tail_depth_sweep_qwen_pod128.json` | `tail_depth_sweep.py`, `tail_depth_sweep_gen.py` |
-| Table V, fleet composition | `stats_fullshape_matrix_pod128.json` | `fullshape_matrix_v2.py` |
-| Table VI, context length | `stats_context_length_sweep_pod128.json` | `context_length_sweep.py` |
-| Table VII, synchronized bursts | `stats_hetero_sched_pod128_b{1,2}.json` | `scale_bench_stats.py` |
-| Fig. 9, tail depth and diversity | `stats_tail_depth_sweep_pod128.json`, `stats_diversity_sweep_pod128.json` | `tail_depth_sweep.py`, `diversity_sweep.py` |
-| Exact-match gradient | `stats_gradient_{homog,twotier,fullyhetero}_pod128.json` | `scale_bench_stats.py` |
-| Cache merging, 18 % to 43 % of a step | `profile_{wildgpt4,longreason}_pod128_server.log` | `profile_progressive.py` |
-| Cache at most 2.8 % of weights | `log_mem_llama_homog_{off,on}_pod128.log` | `mem_bench.py` |
-
 ## Re-running the measurements
 
 All measurements ran in the container on one server with a 96 GB GPU for the
