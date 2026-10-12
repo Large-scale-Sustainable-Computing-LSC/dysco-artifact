@@ -1,4 +1,13 @@
-
+#!/bin/bash
+# Reruns every reported experiment at 128 generated tokens per session (was 16),
+# inside Podman. 128 is the shortest output length the standard serving
+# benchmarks use; at 16 a session's decode phase lasted ~0.23 s, so fleet
+# membership turned over constantly and prefill was a large share of every
+# timed window.
+#
+# Every output carries a _pod128 suffix. The original run also included a
+# batch-window-width sweep and a cache-persistence comparison; neither is
+# reported, so both are omitted here.
 set -u
 HERE=$(dirname "$(readlink -f "$0")"); cd "$HERE"
 RUN="podman run --rm --device nvidia.com/gpu=all \
@@ -11,7 +20,7 @@ PY=python3.12
 step() { echo; echo "########## $1 $(date -Is)"; }
 
 
-step "[1/10] Poisson arrivals, heterogeneous (Table 1, Fig. 2)"
+step "[1/10] Poisson arrivals, heterogeneous"
 $RUN $IMG $PY poisson_bench.py --cut-layers 2,3,4,5,6,7,8,9 --edge-devices cuda:1,cuda:2 \
   --conditions fifo,batch,interleave,progressive-sc --target-concurrency 2,4,8 \
   --repeats 15 --num-sessions 24 --pool-size 16 \
@@ -26,10 +35,10 @@ $RUN $IMG $PY scale_bench_stats.py --cut-layers 9,8,7,6,5,4,3,2 --repeats 15 \
   --conditions progressive-sc,interleave,batch,fifo \
   --results-json stats_hetero_sched_pod128_b2.json || echo "[2b] FAILED"
 
-step "[3/10] tail-depth sweep (Table 2, Fig. 3 top)"
+step "[3/10] tail-depth sweep"
 $RUN -e SWEEP_OUT=stats_tail_depth_sweep_pod128.json $IMG $PY tail_depth_sweep.py || echo "[3] FAILED"
 
-step "[4/10] diversity sweep (Fig. 3 bottom)"
+step "[4/10] diversity sweep"
 $RUN -e SWEEP_OUT=stats_diversity_sweep_pod128.json $IMG $PY diversity_sweep.py || echo "[4] FAILED"
 
 step "[5/10] decode-step profile, short and long context"

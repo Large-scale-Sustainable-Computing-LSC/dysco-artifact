@@ -2,7 +2,7 @@
 
 Code and measurement data for the multi-edge part of the paper: the
 depth-synchronized batching (DSB) scheduler, the three baselines it is compared
-against, and every experiment reported in Section V-B-2.
+against, and every experiment behind the reported multi-edge results.
 
 This directory is self-contained. It pins its own environment in
 `Containerfile` (CUDA 12.8, torch 2.9.0, transformers 5.16.1, grpcio 1.83.0),

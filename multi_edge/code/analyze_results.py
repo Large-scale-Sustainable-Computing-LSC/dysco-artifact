@@ -1,4 +1,4 @@
-"""
+"""Every reported value, recomputed from the raw result files.
 
     python3 analyze_results.py pod128
 
@@ -388,7 +388,7 @@ def _():
     return dict(tail20_gain=t20, diversity_k8_gain=OUT["diversity"]["gains"][8],
                 diversity_k1_control=OUT["diversity"]["gains"][1])
 
-@section("table4")
+@section("shape_examples")
 def _():
     tails = {r["tail"]: [r["gain"], r["t"]] for r in OUT["tail"]["rows"]}   # [gain, t] like the matrix rows
     mx = OUT["matrix"]["rows"]

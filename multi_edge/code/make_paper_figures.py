@@ -1,4 +1,4 @@
-"""
+"""Draw the results figures from the extracted numbers.
 
     python3 make_paper_figures.py pod128            # writes into ../figures
     python3 make_paper_figures.py pod128 /tmp/check # write elsewhere, to compare
