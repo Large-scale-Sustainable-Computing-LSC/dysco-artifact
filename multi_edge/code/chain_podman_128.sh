@@ -4,6 +4,7 @@ HERE=$(dirname "$(readlink -f "$0")"); cd "$HERE"
 RUN="podman run --rm --device nvidia.com/gpu=all \
   -v "${HF_CACHE:-$HOME/.cache/huggingface}":/root/.cache/huggingface \
   -v "$HERE":/app/code -w /app/code \
+  -v "$HERE/../selected_testsets":/app/selected_testsets:ro \
   -e EDGE_PYTHON=python3.12 -e HF_HUB_OFFLINE=1 -e PYTHONUNBUFFERED=1 \
   -e GEN_TOKENS=128"
 IMG=${IMG:-edge-cloud-dsb:latest}
